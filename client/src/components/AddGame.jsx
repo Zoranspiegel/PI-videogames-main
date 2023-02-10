@@ -50,7 +50,7 @@ function AddGame() {
   //////////////////////////////
   const handleSubmit = (e) => {
     e.preventDefault();
-    axios.post("http://localhost:3001/videogames", input)
+    axios.post("https://pi-videogames-main-production-71c7.up.railway.app/videogames", input)
     .then((r) => {
       dispatch(getVideogames());
       history.push(`/details/${r.data.id}`);

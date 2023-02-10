@@ -11,19 +11,19 @@ export const CLEAR_MODVGAMES = "CLEAR_MODVGAMES";
 
 export const getGenres = () => (dispatch) => {
   return axios
-    .get(`http://localhost:3001/genres`)
+    .get(`https://pi-videogames-main-production-71c7.up.railway.app/genres`)
     .then((r) => dispatch({ type: GET_GENRES, payload: r.data }));
 };
 
 export const getVideogames = () => (dispatch) => {
   return axios
-    .get(`http://localhost:3001/videogames`)
+    .get(`https://pi-videogames-main-production-71c7.up.railway.app/videogames`)
     .then((r) => dispatch({ type: GET_VIDEOGAMES, payload: r.data }));
 };
 
 export const searchVGames = (name) => (dispatch) => {
   return axios
-    .get(`http://localhost:3001/videogames?name=${name}`)
+    .get(`https://pi-videogames-main-production-71c7.up.railway.app/videogames?name=${name}`)
     .then((r) => dispatch({ type: SEARCH_VGAMES, payload: r.data }));
 };
 
@@ -33,7 +33,7 @@ export const clearSearch = () => {
 
 export const getDetails = (id) => (dispatch) => {
   axios
-    .get(`http://localhost:3001/videogames/${id}`)
+    .get(`https://pi-videogames-main-production-71c7.up.railway.app/videogames/${id}`)
     .then((r) => dispatch({ type: GET_DETAILS, payload: r.data }));
 };
 
