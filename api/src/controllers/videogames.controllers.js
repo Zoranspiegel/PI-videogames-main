@@ -127,7 +127,7 @@ const postVideogame = async (req, res) => {
   try {
     const newVGame = await Videogame.create(req.body);
     await newVGame.setGenres(req.body.genres)
-    res.status(201).json("Videogame Successfully Created");
+    res.status(201).json(newVGame);
   } catch (error) {
     res.status(400).json({ error: error.message });
   }
