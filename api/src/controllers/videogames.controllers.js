@@ -50,7 +50,7 @@ const getVideogames = async (req, res) => {
   try {
     ///////////////////////////////////////////
     const dbVGames = await Videogame.findAll({
-      attributes: ["id", "name", "image"],
+      attributes: ["id", "name", "image", "rating"],
       include: [{
         model: Genre,
         attributes: ["name"],
@@ -70,6 +70,7 @@ const getVideogames = async (req, res) => {
         id: vg.id,
         name: vg.name,
         image: vg.background_image,
+        rating: vg.rating,
         genres: vg.genres.map(g => { return { name: g.name } })
       }
     })
